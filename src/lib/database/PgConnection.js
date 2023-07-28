@@ -4,19 +4,19 @@ class PgConnection {
   static #instance = null;
 
   static pool() {
-    if (this.#instance === null) {
+    if (PgConnection.#instance === null) {
       const pool = new Pool({
-        user: 'postgres',
-        host: 'localhost',
-        database: 'dvdrental',
-        password: '#Psql11534990',
+        user: process.env.PG_USER,
+        host: process.env.PG_HOST,
+        database: process.env.PG_DATABASE,
+        password: process.env.PG_PASSWORD,
         port: 5432,
       });
 
-      this.#instance = pool;
+      PgConnection.#instance = pool;
     }
 
-    return this.#instance;
+    return PgConnection.#instance;
   }
 };
 
