@@ -1,9 +1,9 @@
 {
   "dev": {
     "driver": "pg",
-    "user": "postgres",
-    "password": "#Psql11534990",
-    "host": "localhost",
-    "database": "dvdrental"
+    "user": { "ENV": "PG_USER" },
+    "password": { "ENV": "PG_PASSWORD"},
+    "host": { "ENV": "PG_HOST" },
+    "database": { "ENV": "PG_DATABASE" }
   }
 }
